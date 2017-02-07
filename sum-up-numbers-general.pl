@@ -8,7 +8,7 @@ sum-up-numbers-general(L, N):-
 
 
 sum-up-numbers-general(L, N):-
-	[X|Y] = L,
+	[X|_] = L,
 	is_list(X),
 	[A|B] = X,
 	sum-up-numbers-general(B, N1),
