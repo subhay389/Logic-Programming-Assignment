@@ -14,5 +14,8 @@ sum-up-numbers-general(L, N):-
 	sum-up-numbers-general(B, N1),
 	N is N1 + A.
 
-%sum-up-numbers-general(L, N):-
-	
+sum-up-numbers-general(L, N):-
+	[X|Y] = L,
+	not(number(X)),
+	sum-up-numbers-general(Y, N1),
+	N is 0 + N1.	
