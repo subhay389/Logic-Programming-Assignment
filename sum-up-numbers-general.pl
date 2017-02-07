@@ -10,7 +10,7 @@ sum-up-numbers-general(L, N):-
 sum-up-numbers-general(L, N):-
 	[X|Y] = L,
 	is_list(X),
-
+	[A|B] = X,
 	sum-up-numbers-general(B, N1),
 	N is N1 + A.
 
