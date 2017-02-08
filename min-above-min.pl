@@ -30,6 +30,10 @@ list_above_min_helper(_, List, Acc, Acc):-
 	listlength(List, Length),
 	Length < 1.
 
+list_above_min_helper(Min, [X|Y],  Acc, Min_list) :-
+	not(number(X)),
+	list_above_min_helper(Min, Y,  Acc, Min_list).
+
 list_above_min_helper(Min, List,  Acc, Min_list) :-
 	listlength(List, Length),
 	Length > 0,
