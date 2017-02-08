@@ -1,5 +1,11 @@
-%min-above-min(L1, L2 N):-
+min-above-min(L1, L2, N):-
+	min_in_list(L2, Min_of_L2),
+	list_above_min(Min_of_L2, L1, New_list),
+	min_in_list(New_list, N).
 
+
+
+% finding the minimum of the list
 min_in_list([Min],Min).
 
 min_in_list([H,K|T],M) :-
@@ -23,6 +29,7 @@ min_in_list([H,K|T],M) :-
 	min_in_list([H|T],M).
 
 
+% creating new list which contains elements only larger than the Min value
 list_above_min(Min, List, Min_list) :-
 	list_above_min_helper(Min, List, [], Min_list).
 
