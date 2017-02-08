@@ -1,4 +1,14 @@
 min-above-min(L1, L2, N):-
+	listlength(L2, Length),
+	Length < 1,
+	min_in_list(L1, N).
+
+min-above-min(L1, _, N):-
+	listlength(L1, Length),
+	Length < 1,
+	N is -1.
+
+min-above-min(L1, L2, N):-
 	min_in_list(L2, Min_of_L2),
 	list_above_min(Min_of_L2, L1, New_list),
 	min_in_list(New_list, N).
